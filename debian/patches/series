@@ -3,3 +3,4 @@
 mysql-path.patch
 no-dirty-version
 runocft
+SSBM-332-heartbeat.patch
