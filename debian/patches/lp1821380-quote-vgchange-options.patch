@@ -1,0 +1,33 @@
+From 3949641f2fc7dfd4789d0f82a1025dcd364eda16 Mon Sep 17 00:00:00 2001
+From: Daniel Hoffend <dh@dotlan.net>
+Date: Wed, 24 Feb 2016 22:48:47 +0100
+Subject: [PATCH] quote vgchange options
+
+Origin: upstream, https://github.com/ClusterLabs/resource-agents/commit/3949641f2fc7
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1821380
+---
+ heartbeat/LVM | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Index: resource-agents-3.9.7/heartbeat/LVM
+===================================================================
+--- resource-agents-3.9.7.orig/heartbeat/LVM
++++ resource-agents-3.9.7/heartbeat/LVM
+@@ -386,7 +386,7 @@ get_activate_options()
+ ##
+ retry_exclusive_start()
+ {
+-	local vgchange_options=$(get_activate_options)
++	local vgchange_options="$(get_activate_options)"
+ 
+ 	# Deactivate each LV in the group one by one cluster wide
+ 	set -- $(lvs -o name,attr --noheadings $OCF_RESKEY_volgrpname 2> /dev/null)
+@@ -412,7 +412,7 @@ retry_exclusive_start()
+ #	Enable LVM volume
+ #
+ LVM_start() {
+-	local vgchange_options=$(get_activate_options)
++	local vgchange_options="$(get_activate_options)"
+ 	local vg=$1
+ 	local clvmd=0
+ 

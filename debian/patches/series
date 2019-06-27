@@ -4,3 +4,6 @@ mysql-path.patch
 no-dirty-version
 runocft
 SSBM-332-heartbeat.patch
+lp1821380-quote-vgchange-options.patch
+lp1825250-ethmonitor-check-if-interface-exists-by-link.patch
+lp1825250-ethmonitor-fix-is_interface-regression.patch
